@@ -38,12 +38,12 @@
 <body>
 <main>
   <h1>Política de Privacidade — DivenUp</h1>
-  <p class="muted">Última atualização: 14 de outubro de 2026</p>
+  <p class="muted">Última atualização: 21 de outubro de 2026</p>
 
   <p>Esta Política de Privacidade descreve como o aplicativo <strong>DivenUp</strong> ("nós", "app") trata as informações dos usuários, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
 
   <h2>1. Quem somos</h2>
-  <p>O DivenUp é um aplicativo para dividir contas e despesas entre participantes de eventos (viagens, churrascos, bares etc.).</p>
+  <p>O DivenUp é um aplicativo para dividir contas e despesas entre participantes de eventos (viagens, churrascos, bares etc.), disponível para <strong>iOS</strong> (App Store/TestFlight) e <strong>Android</strong> (Google Play).</p>
   <p><strong>Responsável:</strong> Breno Tavares<br />
   <strong>Contato:</strong> <a href="mailto:blivio@gmail.com">blivio@gmail.com</a></p>
 
@@ -57,7 +57,7 @@
 
   <h3>2.2 Dados que você insere no app</h3>
   <ul>
-    <li><strong>Eventos, participantes, despesas, contas e pagamentos</strong> que você registra.</li>
+    <li><strong>Eventos, participantes, despesas, contas, pagamentos e notas</strong> que você registra.</li>
     <li><strong>Contatos</strong> que você cadastra manualmente ou <strong>importa do celular</strong> (nome, telefone, e-mail) — a importação só ocorre quando você toca explicitamente em "Importar do celular" e concede a permissão.</li>
   </ul>
   <p>Esses dados ficam <strong>armazenados no seu aparelho</strong>. Se você estiver <strong>logado</strong>, eles também são <strong>sincronizados</strong> com a nuvem (para você acessá-los em outros aparelhos).</p>
@@ -65,13 +65,19 @@
   <h3>2.3 Compras (assinaturas)</h3>
   <p>As compras e assinaturas são processadas pela <strong>Apple</strong> (App Store) ou <strong>Google</strong> (Play Store) e gerenciadas pelo <strong>RevenueCat</strong>. Não temos acesso aos dados do seu cartão. Recebemos apenas a informação de que a compra está ativa.</p>
 
-  <h3>2.4 Dados de uso e diagnóstico</h3>
-  <p>Não usamos ferramentas de análise/marketing. Na versão de teste (TestFlight), a Apple pode coletar <strong>relatórios de falhas (crash)</strong> para melhorias.</p>
+  <h3>2.4 Anúncios, notificações e diagnóstico</h3>
+  <ul>
+    <li><strong>Anúncios:</strong> o plano Free pode exibir anúncios do <strong>Google Mobile Ads (AdMob)</strong>. O SDK pode tratar identificadores do aparelho e dados de interação com anúncios para entrega e medição, conforme a política do Google.</li>
+    <li><strong>Notificações push:</strong> se você permitir, guardamos um token do aparelho (Expo) para enviar avisos de convites, lançamentos e pagamentos.</li>
+    <li><strong>Diagnóstico:</strong> não usamos ferramentas próprias de análise ou marketing. Nas versões distribuídas pela Apple (App Store/TestFlight) ou pelo Google (Google Play), as respectivas lojas podem coletar <strong>relatórios de falhas (crash)</strong> e dados de diagnóstico para melhorias.</li>
+  </ul>
 
   <h3>2.5 Permissões do aparelho</h3>
   <ul>
     <li><strong>Contatos:</strong> usada apenas se você importar contatos.</li>
     <li><strong>Face ID / biometria:</strong> usada apenas para desbloquear o app, quando você ativa essa opção. A biometria <strong>não sai do seu aparelho</strong>.</li>
+    <li><strong>Câmera:</strong> usada apenas para ler o QR code de um perfil. A imagem não é armazenada nem enviada.</li>
+    <li><strong>Notificações:</strong> usada para avisos de convites, lançamentos e pagamentos, se você permitir.</li>
   </ul>
 
   <h2>3. Para que usamos os dados</h2>
@@ -79,6 +85,8 @@
     <li>Fornecer as funcionalidades do app (dividir contas, calcular saldos, gerar resumos).</li>
     <li>Sincronizar seus dados entre aparelhos (somente se você tiver conta e estiver logado).</li>
     <li>Gerenciar assinaturas/compras.</li>
+    <li>Exibir anúncios para o plano Free.</li>
+    <li>Enviar notificações de convites, lançamentos e pagamentos.</li>
     <li>Atender solicitações de suporte.</li>
   </ul>
   <p><strong>Base legal (LGPD):</strong> execução do contrato/uso do serviço (art. 7º, V), seu consentimento (art. 7º, I) e legítimo interesse para segurança e melhoria do serviço.</p>
@@ -90,6 +98,8 @@
     <tbody>
       <tr><td><strong>Supabase</strong></td><td>Autenticação e banco de dados na nuvem</td><td>Servidores do Supabase</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>Gestão de assinaturas/compras</td><td>Servidores do RevenueCat</td></tr>
+      <tr><td><strong>Google Mobile Ads (AdMob)</strong></td><td>Exibição e medição de anúncios</td><td>Servidores do Google</td></tr>
+      <tr><td><strong>Expo Push</strong></td><td>Entrega de notificações push</td><td>Servidores da Expo</td></tr>
       <tr><td><strong>Apple / Google</strong></td><td>Processamento de compras e distribuição do app</td><td>—</td></tr>
     </tbody>
   </table>
@@ -107,6 +117,7 @@
     <li>Dados locais: permanecem no aparelho até você <strong>desinstalar o app</strong> ou limpar os dados.</li>
     <li>Dados na nuvem: permanecem enquanto sua conta existir.</li>
   </ul>
+  <p>Na exclusão da conta, os dados pessoais são removidos ou anonimizados. Registros financeiros de eventos compartilhados podem ser mantidos como "Conta Excluída" para preservar os saldos dos outros participantes.</p>
 
   <h2>7. Seus direitos (LGPD)</h2>
   <p>Você pode solicitar:</p>
@@ -116,10 +127,10 @@
     <li><strong>Portabilidade</strong>;</li>
     <li><strong>Informações</strong> sobre o compartilhamento.</li>
   </ul>
-  <p>No app, ao <strong>sair da conta</strong>, os dados locais da conta são ocultados/removidos do aparelho (continuam na nuvem, vinculados à sua conta). Para <strong>excluir a conta e os dados da nuvem</strong>, entre em contato pelo e-mail abaixo.</p>
+  <p>No app, ao <strong>sair da conta</strong>, os dados locais da conta deixam de ser exibidos (continuam no aparelho e na nuvem, vinculados à sua conta). Para <strong>excluir a conta</strong>, use <strong>Ajustes → Excluir minha conta</strong> no app. A exclusão também pode ser solicitada pelo e-mail abaixo.</p>
 
-  <h2>8. Crianças</h2>
-  <p>O app não é direcionado a menores de 13 anos e não coletamos intencionalmente dados de crianças.</p>
+  <h2>8. Crianças e adolescentes</h2>
+  <p>O app não é direcionado a menores de 18 anos e não coletamos intencionalmente dados de crianças ou adolescentes.</p>
 
   <h2>9. Alterações desta política</h2>
   <p>Podemos atualizar esta política. A data de "última atualização" no topo indica a versão vigente. O uso contínuo após alterações implica concordância.</p>
