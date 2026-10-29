@@ -116,6 +116,26 @@
       margin: 0;
     }
 
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 22px 0 18px;
+    }
+
+    .other {
+      text-align: left;
+    }
+
+    .other h2 {
+      font-size: 16px;
+      margin: 0 0 6px;
+    }
+
+    .other p {
+      font-size: 13px;
+      margin: 0 0 8px;
+    }
+
     footer {
       margin-top: 22px;
       padding-top: 16px;
@@ -130,7 +150,8 @@
 </head>
 <body>
   <main class="card">
-    <img class="logo" src="./icon.png" alt="DivenUp">
+    <img class="logo" id="logo" src="./icon.png" alt="DivenUp"
+         onerror="this.hidden = true">
 
     <h1 id="title">Convite para o DivenUp</h1>
     <p class="event" id="event" hidden></p>
@@ -147,6 +168,13 @@
     <a class="open" id="open" href="divenup://">Já tenho o app — abrir</a>
 
     <p class="hint" id="hint">Depois de criar sua conta, envie seu @usuário para quem te convidou.</p>
+
+    <div class="other" id="other" hidden>
+      <div class="divider"></div>
+      <h2 id="other-title"></h2>
+      <p id="other-subtitle"></p>
+      <p class="hint" id="other-hint"></p>
+    </div>
 
     <footer>
       <a href="https://blivio.github.io/divenup-privacy/">Privacidade</a>
@@ -175,33 +203,48 @@
         .trim()
         .slice(0, 80);
 
-      var en = (navigator.language || 'pt').toLowerCase().indexOf('pt') !== 0;
+      function build(lang) {
+        var who = handle ? '@' + handle : '';
 
-      var text = en
-        ? {
-            title: handle ? handle + ' invited you to DivenUp' : 'You were invited to DivenUp',
+        if (lang === 'en') {
+          return {
+            title: handle
+              ? who + ' invited you to DivenUp'
+              : 'You were invited to DivenUp',
             subtitle: 'Organize your events and split the bills with the participants.',
             event: 'Event: ' + eventName,
             android: 'Download for Android',
             ios: 'Download for iPhone',
             open: 'I already have the app — open',
             hint: handle
-              ? 'After creating your account, send your @username to @' + handle + '.'
+              ? 'After creating your account, send your @username to ' + who + '.'
               : 'After creating your account, send your @username to the person who invited you.'
-          }
-        : {
-            title: handle ? handle + ' te convidou para o DivenUp' : 'Você foi convidado para o DivenUp',
-            subtitle: 'Organize seus eventos e divida as contas com os participantes.',
-            event: 'Evento: ' + eventName,
-            android: 'Baixar para Android',
-            ios: 'Baixar para iPhone',
-            open: 'Já tenho o app — abrir',
-            hint: handle
-              ? 'Depois de criar sua conta, envie seu @usuário para @' + handle + '.'
-              : 'Depois de criar sua conta, envie seu @usuário para quem te convidou.'
           };
+        }
 
-      document.documentElement.lang = en ? 'en' : 'pt-BR';
+        return {
+          title: handle
+            ? who + ' te convidou para o DivenUp'
+            : 'Você foi convidado para o DivenUp',
+          subtitle: 'Organize seus eventos e divida as contas com os participantes.',
+          event: 'Evento: ' + eventName,
+          android: 'Baixar para Android',
+          ios: 'Baixar para iPhone',
+          open: 'Já tenho o app — abrir',
+          hint: handle
+            ? 'Depois de criar sua conta, envie seu @usuário para ' + who + '.'
+            : 'Depois de criar sua conta, envie seu @usuário para quem te convidou.'
+        };
+      }
+
+      var lang =
+        (navigator.language || 'pt').toLowerCase().indexOf('pt') === 0
+          ? 'pt'
+          : 'en';
+
+      var text = build(lang);
+
+      document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
       document.title = text.title;
 
       document.getElementById('title').textContent = text.title;
@@ -217,6 +260,19 @@
       document.getElementById('ios').textContent = text.ios;
       document.getElementById('open').textContent = text.open;
       document.getElementById('hint').textContent = text.hint;
+
+      // Como na pagina de confirmacao: em PT mostra tambem a versao em
+      // ingles; em EN o texto principal ja e ingles.
+      if (lang === 'pt') {
+        var other = build('en');
+        var otherEl = document.getElementById('other');
+
+        document.getElementById('other-title').textContent = other.title;
+        document.getElementById('other-subtitle').textContent = other.subtitle;
+        document.getElementById('other-hint').textContent = other.hint;
+
+        otherEl.hidden = false;
+      }
 
       // No celular mostra so a loja da plataforma; no desktop, as duas.
       var ua = navigator.userAgent;
