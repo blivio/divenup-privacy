@@ -61,6 +61,17 @@
   </ol>
   <p>Se você usa o app apenas como convidado, não há conta na nuvem. Os dados locais são removidos ao desinstalar o app ou limpar os dados do aplicativo.</p>
 
+  <h3>1.1 Excluir dados específicos sem excluir a conta</h3>
+  <p>Você pode apagar dados individualmente, sem excluir a conta:</p>
+  <ul>
+    <li><strong>Eventos:</strong> na lista de eventos, abra o menu do evento e toque em <strong>Excluir evento</strong>. Se houver participantes ou lançamentos, apague os lançamentos primeiro.</li>
+    <li><strong>Despesas e pagamentos:</strong> abra o evento ou a conta, toque no item e escolha <strong>Excluir</strong>.</li>
+    <li><strong>Contatos:</strong> em <strong>Contatos</strong>, selecione o contato e toque em <strong>Excluir contato</strong>. Se ele estiver em eventos, remova-o dos eventos primeiro.</li>
+    <li><strong>Notas:</strong> abra a nota e toque em <strong>Excluir</strong>.</li>
+    <li><strong>Outros dados:</strong> solicite por e-mail em <a href="mailto:blivio@gmail.com">blivio@gmail.com</a>.</li>
+  </ul>
+  <p>Alguns registros financeiros de eventos compartilhados podem ser mantidos como “Conta Excluída” para preservar os saldos dos outros participantes, conforme a seção 4.</p>
+
   <h2>2. Como solicitar por e-mail</h2>
   <p>Se você não consegue entrar no app, envie para
     <a href="mailto:blivio@gmail.com?subject=Exclus%C3%A3o%20de%20conta%20-%20DivenUp">blivio@gmail.com</a>
@@ -71,7 +82,7 @@
   <table>
     <thead><tr><th>Dado</th><th>O que acontece</th></tr></thead>
     <tbody>
-      <tr><td>Conta</td><td>E-mail, senha (hash), @usuário e dados de perfil são removidos ou anonimizados.</td></tr>
+      <tr><td>Conta</td><td>E-mail, senha (hash), @usuário, nome de exibição e foto de perfil são removidos ou anonimizados. A foto também é apagada do Supabase Storage.</td></tr>
       <tr><td>Sessão e token de push</td><td>Removidos; o aparelho deixa de receber notificações da conta.</td></tr>
       <tr><td>Eventos e participantes</td><td>Eventos em que você é o único participante são excluídos; eventos compartilhados seguem a regra da seção 4.</td></tr>
       <tr><td>Despesas, contas, pagamentos e notas</td><td>Dados pessoais são excluídos ou anonimizados; registros financeiros de eventos compartilhados podem ser mantidos como “Conta Excluída”.</td></tr>
