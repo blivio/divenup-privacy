@@ -38,7 +38,7 @@
 <body>
 <main>
   <h1>Política de Privacidade — DivenUp</h1>
-  <p class="muted">Última atualização: 26 de outubro de 2026</p>
+  <p class="muted">Última atualização: 6 de novembro de 2026</p>
 
   <p>Esta Política de Privacidade descreve como o aplicativo <strong>DivenUp</strong> ("nós", "app") trata as informações dos usuários, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
 
@@ -49,10 +49,11 @@
 
   <h2>2. Quais dados tratamos</h2>
 
-  <h3>2.1 Dados de conta (opcional)</h3>
+  <h3>2.1 Dados de conta e perfil (opcional)</h3>
   <p>O uso do app <strong>não exige conta</strong>. Se você criar uma conta, nós tratamos:</p>
   <ul>
     <li><strong>E-mail</strong> e senha (a senha é armazenada de forma segura pelo provedor de autenticação, sem acesso a ela em texto claro).</li>
+    <li><strong>Nome de exibição</strong>, <strong>@usuário</strong> e, se você escolher, <strong>foto de perfil</strong>. A foto é opcional, armazenada no Supabase Storage e fica <strong>publicamente acessível pela URL</strong> para aparecer nos eventos e perfis. Não envie uma foto que você não queira tornar pública.</li>
   </ul>
 
   <h3>2.2 Dados que você insere no app</h3>
@@ -74,7 +75,8 @@
 
   <h3>2.5 Permissões do aparelho</h3>
   <ul>
-    <li><strong>Contatos:</strong> usada apenas se você importar contatos.</li>
+    <li><strong>Contatos:</strong> usada para importar contatos quando você toca em "Importar do celular" e para atualizar o próprio contato do aparelho ao vincular/desvincular um perfil ou ao salvar dados do contato no DivenUp.</li>
+    <li><strong>Fotos:</strong> usada apenas quando você toca para escolher a foto de perfil. O app não acessa sua galeria em segundo plano.</li>
     <li><strong>Face ID / biometria:</strong> usada apenas para desbloquear o app, quando você ativa essa opção. A biometria <strong>não sai do seu aparelho</strong>.</li>
     <li><strong>Câmera:</strong> usada apenas para ler o QR code de um perfil. A imagem não é armazenada nem enviada.</li>
     <li><strong>Notificações:</strong> usada para avisos de convites, lançamentos e pagamentos, se você permitir.</li>
@@ -84,6 +86,7 @@
   <ul>
     <li>Fornecer as funcionalidades do app (dividir contas, calcular saldos, gerar resumos).</li>
     <li>Sincronizar seus dados entre aparelhos (somente se você tiver conta e estiver logado).</li>
+    <li>Exibir seu nome, @usuário e foto de perfil para outros participantes dos eventos.</li>
     <li>Gerenciar assinaturas/compras.</li>
     <li>Exibir anúncios para o plano Free.</li>
     <li>Enviar notificações de convites, lançamentos e pagamentos.</li>
@@ -96,7 +99,7 @@
   <table>
     <thead><tr><th>Operador</th><th>Finalidade</th><th>Onde</th></tr></thead>
     <tbody>
-      <tr><td><strong>Supabase</strong></td><td>Autenticação e banco de dados na nuvem</td><td>Servidores do Supabase</td></tr>
+      <tr><td><strong>Supabase</strong></td><td>Autenticação, banco de dados e armazenamento das fotos de perfil</td><td>Servidores do Supabase</td></tr>
       <tr><td><strong>RevenueCat</strong></td><td>Gestão de assinaturas/compras</td><td>Servidores do RevenueCat</td></tr>
       <tr><td><strong>Google Mobile Ads (AdMob)</strong></td><td>Exibição e medição de anúncios</td><td>Servidores do Google</td></tr>
       <tr><td><strong>Expo Push</strong></td><td>Entrega de notificações push</td><td>Servidores da Expo</td></tr>
@@ -109,6 +112,7 @@
   <ul>
     <li>Os dados ficam no <strong>seu aparelho</strong> (banco local) e, se você estiver logado, na <strong>nuvem (Supabase)</strong>.</li>
     <li>O acesso à nuvem é protegido por autenticação e por regras de segurança que garantem que <strong>cada usuário acessa apenas os próprios dados</strong>.</li>
+    <li>A foto de perfil é uma exceção intencional: fica em um bucket público e pode ser acessada por qualquer pessoa que tenha a URL. Apenas o próprio usuário pode enviar, trocar ou apagar a foto da sua pasta.</li>
     <li>Adotamos medidas técnicas razoáveis para proteger as informações.</li>
   </ul>
 
@@ -116,6 +120,7 @@
   <ul>
     <li>Dados locais: permanecem no aparelho até você <strong>desinstalar o app</strong> ou limpar os dados.</li>
     <li>Dados na nuvem: permanecem enquanto sua conta existir.</li>
+    <li>Foto de perfil: permanece enquanto você mantiver a foto; ao trocar por outra, a anterior é removida. Na exclusão da conta, a foto também é apagada do armazenamento.</li>
   </ul>
   <p>Na exclusão da conta, os dados pessoais são removidos ou anonimizados. Registros financeiros de eventos compartilhados podem ser mantidos como "Conta Excluída" para preservar os saldos dos outros participantes.</p>
 
@@ -138,6 +143,8 @@
   <h2>10. Contato</h2>
   <p>Dúvidas sobre privacidade ou solicitações:<br />
   <a href="mailto:blivio@gmail.com">blivio@gmail.com</a></p>
+  <p>Termos de Uso/EULA:<br />
+  <a href="https://blivio.github.io/divenup-privacy/eula/">https://blivio.github.io/divenup-privacy/eula/</a></p>
 
   <footer>DivenUp — Política de Privacidade</footer>
 </main>
