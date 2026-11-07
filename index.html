@@ -53,7 +53,7 @@
   <p>O uso do app <strong>não exige conta</strong>. Se você criar uma conta, nós tratamos:</p>
   <ul>
     <li><strong>E-mail</strong> e senha (a senha é armazenada de forma segura pelo provedor de autenticação, sem acesso a ela em texto claro).</li>
-    <li><strong>Nome de exibição</strong>, <strong>@usuário</strong> e, se você escolher, <strong>foto de perfil</strong>. A foto é opcional, armazenada no Supabase Storage e fica <strong>publicamente acessível pela URL</strong> para aparecer nos eventos e perfis. Não envie uma foto que você não queira tornar pública.</li>
+    <li><strong>Nome de exibição</strong>, <strong>@usuário</strong> e, se você escolher, <strong>foto de perfil</strong>. A foto é opcional, armazenada em um bucket <strong>privado</strong> do Supabase Storage e exibida apenas para quem você autorizar em <strong>Ajustes → Meu perfil → Privacidade da foto</strong>. O acesso usa links assinados temporários.</li>
   </ul>
 
   <h3>2.2 Dados que você insere no app</h3>
@@ -82,11 +82,20 @@
     <li><strong>Notificações:</strong> usada para avisos de convites, lançamentos e pagamentos, se você permitir.</li>
   </ul>
 
+  <h3>2.6 Privacidade da foto de perfil</h3>
+  <p>Você escolhe quem pode ver sua foto:</p>
+  <ul>
+    <li><strong>Todos:</strong> qualquer pessoa com conta no DivenUp;</li>
+    <li><strong>Meus contatos:</strong> somente pessoas que você salvou nos seus contatos do DivenUp;</li>
+    <li><strong>Ninguém:</strong> somente você.</li>
+  </ul>
+  <p>O padrão é <strong>Meus contatos</strong>. A foto fica em um bucket privado e o app gera links temporários apenas para quem tem permissão. Sua escolha de privacidade fica guardada no seu perfil. Se você mudar a privacidade, links já emitidos podem continuar válidos por até alguns minutos.</p>
+
   <h2>3. Para que usamos os dados</h2>
   <ul>
     <li>Fornecer as funcionalidades do app (dividir contas, calcular saldos, gerar resumos).</li>
     <li>Sincronizar seus dados entre aparelhos (somente se você tiver conta e estiver logado).</li>
-    <li>Exibir seu nome, @usuário e foto de perfil para outros participantes dos eventos.</li>
+    <li>Exibir seu nome, @usuário e foto de perfil para outros participantes dos eventos, respeitando a privacidade escolhida para a foto.</li>
     <li>Gerenciar assinaturas/compras.</li>
     <li>Exibir anúncios para o plano Free.</li>
     <li>Enviar notificações de convites, lançamentos e pagamentos.</li>
@@ -112,7 +121,7 @@
   <ul>
     <li>Os dados ficam no <strong>seu aparelho</strong> (banco local) e, se você estiver logado, na <strong>nuvem (Supabase)</strong>.</li>
     <li>O acesso à nuvem é protegido por autenticação e por regras de segurança que garantem que <strong>cada usuário acessa apenas os próprios dados</strong>.</li>
-    <li>A foto de perfil é uma exceção intencional: fica em um bucket público e pode ser acessada por qualquer pessoa que tenha a URL. Apenas o próprio usuário pode enviar, trocar ou apagar a foto da sua pasta.</li>
+    <li>A foto de perfil fica em um bucket <strong>privado</strong>. O app só gera links temporários para quem a privacidade da foto permitir: você, todos os usuários ou apenas os seus contatos do DivenUp.</li>
     <li>Adotamos medidas técnicas razoáveis para proteger as informações.</li>
   </ul>
 
